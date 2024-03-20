@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import "../css/aside_module.css";
+import { Link } from "react-router-dom";
 
 function Aside() {
   const [menu, setMenu] = useState(false);
@@ -11,6 +12,7 @@ function Aside() {
     <aside className={menu ? `aside open` : `aside`}>
 
       <div className={menu ? `container-aside-top open` : `container-aside-top`} >
+
         <div className="menu" onClick={toggleMenu}>
           <div className="barra"></div>
           <div className="barra"></div>
@@ -25,28 +27,28 @@ function Aside() {
         <nav className="nav-aside">
           <ul className="ul-aside">
             <li className="li-nav-aside">
-              <a className="links-icon-aside" href="">
-                <i class="bx bx-home"></i>  
-              </a>
-              <a className="links-nav-aside" href="">
+              <Link to={"/inicio"} className="links-icon-aside" >
+                {/* <i class="bx bx-home"></i>   */}
+              </Link>
+              <Link className="links-nav-aside" to={"/inicio"}>
                 Inicio
-              </a>
+              </Link>
             </li>
             <li className="li-nav-aside">
-              <a className="links-icon-aside" href="">
-                <i class="bx bxs-bank"></i>  
-              </a>
-              <a className="links-nav-aside" href="">
+              <Link className="links-icon-aside" to={"/inventario"}>
+                {/* <i class="bx bxs-bank"></i>   */}
+              </Link>
+              <Link className="links-nav-aside" to={"/inventario"}>
                 Inventario
-              </a>
+              </Link>
             </li>
             <li className="li-nav-aside">
-              <a className="links-icon-aside" href="">
-                <i class="bx bx-dollar-circle"></i>  
-              </a>
-              <a className="links-nav-aside" href="">
-              Venta
-              </a>
+              <link className="links-icon-aside" to={"/venta"}>
+                {/* <i class="bx bx-dollar-circle"></i>   */}
+              </link>
+              <Link className="links-nav-aside" to={"/venta"}>
+                Venta
+              </Link>
             </li>
           </ul>
         </nav>
